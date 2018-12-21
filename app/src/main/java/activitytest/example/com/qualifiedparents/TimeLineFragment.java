@@ -1,9 +1,12 @@
 package activitytest.example.com.qualifiedparents;
 
+import android.app.Application;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Display;
@@ -11,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,16 +25,36 @@ public class  TimeLineFragment extends Fragment {
     private RecyclerView Rv;
     private ArrayList<HashMap<String,Object>> listItem;
     private TimeLineAdapter myAdapter;
+    private SwipeRefreshLayout swipeRefresh;
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(final LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.timeline_fragment, container, false);
+
         // 初始化显示的数据
         initData();
 
         // 绑定数据到RecyclerView
         initView(view);
+        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MyApplication.getContext(), "FAB clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        swipeRefresh = (SwipeRefreshLayout) view.findViewById(R.id.swipe_refresh);
+        swipeRefresh.setColorSchemeResources(R.color.colorPrimary);
+        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refreshTimeLine(inflater,container);
+            }
+        });
+
+
         return view;
     }
 
@@ -43,6 +67,9 @@ public class  TimeLineFragment extends Fragment {
         HashMap<String, Object> map4 = new HashMap<String, Object>();
         HashMap<String, Object> map5 = new HashMap<String, Object>();
         HashMap<String, Object> map6 = new HashMap<String, Object>();
+        HashMap<String, Object> map7 = new HashMap<String, Object>();
+        HashMap<String, Object> map8 = new HashMap<String, Object>();
+        HashMap<String, Object> map9 = new HashMap<String, Object>();
 
         map1.put("ItemTitle", "我在大街上骑自行车带着女儿，女儿在后座睡着了，但我不希望她在路上睡觉，她会着凉的，所以我叫醒了她。");
 
@@ -67,6 +94,15 @@ public class  TimeLineFragment extends Fragment {
         map6.put("ItemTitle", "本来约定周末一起去看电影,结果刮台风,下暴雨,根本无法出门,儿子就大声哭了起来,并且说一些气人的话:坏爸爸,说好了");
 
         listItem.add(map6);
+        map7.put("ItemTitle", "本来约定周末一起去看电影,结果刮台风,下暴雨,根本无法出门,儿子就大声哭了起来,并且说一些气人的话:坏爸爸,说好了");
+
+        listItem.add(map7);
+        map8.put("ItemTitle", "本来约定周末一起去看电影,结果刮台风,下暴雨,根本无法出门,儿子就大声哭了起来,并且说一些气人的话:坏爸爸,说好了");
+
+        listItem.add(map8);
+        map9.put("ItemTitle", "本来约定周末一起去看电影,结果刮台风,下暴雨,根本无法出门,儿子就大声哭了起来,并且说一些气人的话:坏爸爸,说好了");
+
+        listItem.add(map9);
 
     }
 
@@ -92,13 +128,37 @@ public class  TimeLineFragment extends Fragment {
         };
         Rv.setLayoutManager(layoutManager);
         Rv.setHasFixedSize(true);
-
+        Rv.setNestedScrollingEnabled(false);
         //用自定义分割线类设置分割线
         Rv.addItemDecoration(new TimeLineItemDecoration(MyApplication.getContext(),size));
 
         //为ListView绑定适配器
         myAdapter = new TimeLineAdapter(MyApplication.getContext(),listItem);
         Rv.setAdapter(myAdapter);
+    }
+
+    private void refreshTimeLine(final LayoutInflater inflater, final ViewGroup container) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        View view = inflater.inflate(R.layout.timeline_fragment, container, false);
+                        // 初始化显示的数据
+                        initData();
+                        // 绑定数据到RecyclerView
+                        initView(view);
+                        swipeRefresh.setRefreshing(false);
+                    }
+                });
+            }
+        }).start();
     }
 
 }

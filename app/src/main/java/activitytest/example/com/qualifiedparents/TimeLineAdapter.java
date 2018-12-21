@@ -7,9 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
 
 public class  TimeLineAdapter extends RecyclerView.Adapter {
     private LayoutInflater inflater;
@@ -22,10 +24,12 @@ public class  TimeLineAdapter extends RecyclerView.Adapter {
 
     //定义Viewholder
     class Viewholder extends RecyclerView.ViewHolder  {
+
         private TextView Title;
 
         public Viewholder(View root) {
             super(root);
+
             Title = (TextView) root.findViewById(R.id.Itemtitle);
         }
 
@@ -51,3 +55,6 @@ public class  TimeLineAdapter extends RecyclerView.Adapter {
         return listItem.size();
     }
 }
+
+
+
