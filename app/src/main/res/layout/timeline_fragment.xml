@@ -1,12 +1,46 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-
-    <TextView
+    <ScrollView
+        android:id="@+id/weather_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="timeline" />
+        android:scrollbars="none"
+        android:orientation="vertical"
+        android:overScrollMode="never">
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            >
 
-</FrameLayout>
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="0px"
+                android:layout_weight="2"
+                android:src="@drawable/timeline_top"
+                />
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:background="@drawable/button_bg"
+                />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/my_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="12"
+                android:focusableInTouchMode="false"
+                android:scrollbars="horizontal"
+                />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
