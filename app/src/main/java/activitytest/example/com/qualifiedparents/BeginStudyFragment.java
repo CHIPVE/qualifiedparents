@@ -28,7 +28,8 @@ public class BeginStudyFragment extends Fragment {
                 note.setTime();
                 note.save();
                 Intent intent = new Intent(getActivity(), QuestionActivity.class);
-                intent.putExtra("id",  note.getId()+"");      // id+"" 这样是把int转成String类型, 否则会报错
+                intent.putExtra("id",  note.getId()+"");
+                intent.putExtra("rewrite",  "0"); // id+"" 这样是把int转成String类型, 否则会报错
                 startActivity(intent);
 
                 getActivity().finish();
