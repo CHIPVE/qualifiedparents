@@ -12,13 +12,19 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.WindowManager;
 
+import java.util.List;
+
+import activitytest.example.com.qualifiedparents.db.Note;
+
 public class TimeLineItemDecoration extends RecyclerView.ItemDecoration {
     // 写右边字的画笔(具体信息)
     private Paint mPaint;
+    private Paint mPaint3;
 
     private Paint mPaintLine;
 
     private Paint mPaintTag;
+    private Paint mPaintTag2;
 
     // 写左边日期字的画笔( 时间 + 日期)
     private Paint mPaint1;
@@ -36,15 +42,23 @@ public class TimeLineItemDecoration extends RecyclerView.ItemDecoration {
     // 图标
     private Bitmap mIcon;
 
+    private List<Note> noteList;
+
     // 在构造函数里进行绘制的初始化，如画笔属性设置等
-    public TimeLineItemDecoration(Context context, Point size) {
+    public TimeLineItemDecoration(Context context, Point size,List<Note> List) {
 
         int screenWidth = size.x;
         int screenHeight = size.y;
 
+        noteList = List;
+
         // 轴点画笔(红色)
         mPaint = new Paint();
         mPaint.setColor(Color.argb(255, 166, 142, 118));
+
+        //圆棕色
+        mPaint3 = new Paint();
+        mPaint3.setColor(Color.argb(255, 144, 59, 28));
 
         mPaintLine = new Paint();
         mPaintLine.setColor(Color.argb(255, 127, 127, 127));
@@ -52,6 +66,9 @@ public class TimeLineItemDecoration extends RecyclerView.ItemDecoration {
 
         mPaintTag =  new Paint();
         mPaintTag.setColor(Color.argb(255, 166, 142, 118));
+        //未解决的框
+        mPaintTag2 =  new Paint();
+        mPaintTag2.setColor(Color.argb(255, 144, 59, 28));
 
         // 左边时间文本画笔(蓝色)
         // 此处设置了两只分别设置 时分 & 年月
@@ -98,57 +115,127 @@ public class TimeLineItemDecoration extends RecyclerView.ItemDecoration {
 
         for (int i = 0; i < childCount; i++) {
             View child = parent.getChildAt(i);
-
             float centerx = child.getLeft() - itemView_leftinterval / 5;
-            float centery = child.getTop() - (child.getHeight())/4;
+            float centery = child.getTop() - itemView_topinterval / 2;
 
-            c.drawCircle(centerx, centery, circle_radius, mPaint);
-            c.drawRoundRect(centerx+36,centery-36,centerx+216,centery+36,15,15,mPaintTag);
-            c.drawText("已解决", centerx+70, centery+13, mPaintSolve);
+            if (i < childCount - 3 && i<noteList.size()) {
+                Note note = noteList.get(noteList.size()-1-i);
+                String temp = new String();
+                String date1 = new String();
+                String date2 = new String();
+                temp = note.getTime().substring(5,7);
+                switch (temp){
+                    case "01":
+                        date1 = "Jan";
+                        break;
+                    case "02":
+                        date1 = "Feb";
+                        break;
+                    case "03":
+                        date1 = "Mar";
+                        break;
+                    case "04":
+                        date1 = "Apr";
+                        break;
+                    case "05":
+                        date1 = "Mar";
+                        break;
+                    case "06":
+                        date1 = "Jun";
+                        break;
+                    case "07":
+                        date1 = "Jul";
+                        break;
+                    case "08":
+                        date1 = "Aug";
+                        break;
+                    case "09":
+                        date1 = "Sep";
+                        break;
+                    case "10":
+                        date1 = "Oct";
+                        break;
+                    case "11":
+                        date1 = "Nov";
+                        break;
+                    case "12":
+                        date1 = "Dec";
+                        break;
+                    default:
+                        date1 = "def";
+                        break;
+                }
+                date1 +=".";
+                date1 += note.getTime().substring(0,4);
+                date2 = note.getTime().substring(8,10);
+                Boolean solve = note.isSolve();
+                if(solve) {
+                    c.drawCircle(centerx, centery, circle_radius, mPaint);
+                    c.drawRoundRect(centerx + 36, centery - 36, centerx + 216, centery + 36, 15, 15, mPaintTag);
+                    c.drawText("已解决", centerx + 70, centery + 13, mPaintSolve);
+                }
+                else
+                {
+                    c.drawCircle(centerx, centery, circle_radius, mPaint3);
+                    c.drawRoundRect(centerx + 36, centery - 36, centerx + 216, centery + 36, 15, 15, mPaintTag2);
+                    c.drawText("未解决", centerx + 70, centery + 13, mPaintSolve);
+                }
+                int index = parent.getChildAdapterPosition(child);
 
-            int index = parent.getChildAdapterPosition(child);
+                float upLine_up_x = centerx;
+                float upLine_up_y = child.getTop() - itemView_topinterval;
 
-            float upLine_up_x = centerx;
-            float upLine_up_y = child.getTop() - itemView_topinterval;
+                float upLine_bottom_x = centerx;
+                float upLine_bottom_y = centery - circle_radius;
 
-            float upLine_bottom_x = centerx;
-            float upLine_bottom_y = centery - circle_radius;
+                if (index != 0) {
+                    c.drawLine(upLine_up_x, upLine_up_y, upLine_bottom_x, upLine_bottom_y, mPaintLine);
+                }
+                float bottomLine_up_x = centerx;
+                float bottom_up_y = centery + circle_radius;
 
-            if(index !=0) {
-                c.drawLine(upLine_up_x, upLine_up_y, upLine_bottom_x, upLine_bottom_y, mPaintLine);
+                float bottomLine_bottom_x = centerx;
+                float bottomLine_bottom_y = child.getBottom();
+
+                c.drawLine(bottomLine_up_x, bottom_up_y, bottomLine_bottom_x, bottomLine_bottom_y, mPaintLine);
+
+
+                float Text_x = centerx - 180;
+                float Text_y = centery + 10;
+
+                c.drawText(date1, Text_x, Text_y, mPaint1);
+                c.drawText(date2, Text_x + 30, Text_y + 120, mPaint2);
             }
-            float bottomLine_up_x = centerx;
-            float bottom_up_y = centery + circle_radius;
+            else if(i>=childCount - 3){
+               c.drawCircle(centerx, centery, circle_radius, mPaint3);
+               c.drawRoundRect(centerx + 36, centery - 36, centerx + 216, centery + 36, 15, 15, mPaintTag2);
+               c.drawText("样例", centerx + 70, centery + 13, mPaintSolve);
 
-            float bottomLine_bottom_x = centerx;
-            float bottomLine_bottom_y = child.getBottom();
+                int index = parent.getChildAdapterPosition(child);
 
-            c.drawLine(bottomLine_up_x, bottom_up_y, bottomLine_bottom_x, bottomLine_bottom_y, mPaintLine);
+                float upLine_up_x = centerx;
+                float upLine_up_y = child.getTop() - itemView_topinterval;
+
+                float upLine_bottom_x = centerx;
+                float upLine_bottom_y = centery - circle_radius;
+
+                if (index != 0) {
+                    c.drawLine(upLine_up_x, upLine_up_y, upLine_bottom_x, upLine_bottom_y, mPaintLine);
+                }
+                float bottomLine_up_x = centerx;
+                float bottom_up_y = centery + circle_radius;
+
+                float bottomLine_bottom_x = centerx;
+                float bottomLine_bottom_y = child.getBottom();
+
+                c.drawLine(bottomLine_up_x, bottom_up_y, bottomLine_bottom_x, bottomLine_bottom_y, mPaintLine);
 
 
+                float Text_x = centerx - 180;
+                float Text_y = centery + 10;
 
-            float Text_x = centerx - 180;
-            float Text_y = centery + 10;
-
-            switch (index) {
-                case (0):
-                    // 设置日期绘制位置
-                    c.drawText("Dec.2018", Text_x, Text_y, mPaint1);
-                    c.drawText("11", Text_x + 30, Text_y + 120, mPaint2);
-                    break;
-                case (1):
-                    // 设置日期绘制位置
-                    c.drawText("Dec.2018", Text_x, Text_y, mPaint1);
-                    c.drawText("02", Text_x + 30, Text_y + 120, mPaint2);
-                    break;
-                case (2):
-                    // 设置日期绘制位置
-                    c.drawText("Nov.2018", Text_x, Text_y, mPaint1);
-                    c.drawText("21", Text_x + 30, Text_y + 120, mPaint2);
-                    break;
-                default:
-                    c.drawText("Nov.2018", Text_x, Text_y, mPaint1);
-                    c.drawText("01", Text_x + 30, Text_y + 120, mPaint2);
+                c.drawText("Nov.2018", Text_x, Text_y, mPaint1);
+                c.drawText("27", Text_x + 30, Text_y + 120, mPaint2);
             }
         }
     }

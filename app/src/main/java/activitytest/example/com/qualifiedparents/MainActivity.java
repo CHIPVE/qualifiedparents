@@ -6,7 +6,13 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+
+import org.litepal.crud.DataSupport;
+
+import activitytest.example.com.qualifiedparents.db.Note;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new UserInfoFragment());
         mainActivityViewPager.setAdapter(adapter);
 //        为 BottomNavigationView 的菜单项  设置监听事件
+
+
         bottomNavView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

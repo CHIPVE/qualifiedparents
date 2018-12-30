@@ -1,0 +1,891 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="26dp"
+            android:layout_marginTop="5dp"
+            android:text="积极情绪"
+            android:textColor="#903b1c"
+            android:textSize="15sp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/image_view1"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentLeft="true"
+                    android:src="@mipmap/img01" />
+                <ImageView
+                    android:id="@+id/image_view2"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/image_view1"
+                    android:src="@mipmap/img02" />
+                <ImageView
+                    android:id="@+id/image_view3"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/image_view2"
+                    android:src="@mipmap/img03" />
+                <ImageView
+                    android:id="@+id/image_view4"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/image_view3"
+                    android:src="@mipmap/img04" />
+
+                <CheckBox
+                    android:id="@+id/rb_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="憧憬"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:textSize="16sp"
+                    android:layout_below="@id/image_view1"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"
+                    />
+                <CheckBox
+                    android:id="@+id/rb_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="好玩"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_below="@id/image_view1"
+                    android:layout_toRightOf="@+id/rb_1"
+                    android:textSize="16sp"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"
+                    />
+                <CheckBox
+                    android:id="@+id/rb_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="坚定"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_below="@id/image_view1"
+                    android:layout_toRightOf="@+id/rb_2"
+                    android:textSize="16sp"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"
+                    />
+                <CheckBox
+                    android:id="@+id/rb_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="开心"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_below="@id/image_view1"
+                    android:layout_toRightOf="@+id/rb_3"
+                    android:textSize="16sp"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/image_view5"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentLeft="true"
+                    android:src="@mipmap/img05" />
+
+                <CheckBox
+                    android:id="@+id/rb_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="平静"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:textSize="16sp"
+                    android:layout_below="@id/image_view5"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"/>
+                <ImageView
+                    android:id="@+id/image_view6"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/image_view5"
+                    android:src="@mipmap/img06" />
+                <CheckBox
+                    android:id="@+id/rb_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="喜欢"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_below="@id/image_view5"
+                    android:layout_toRightOf="@+id/rb_5"
+                    android:textSize="16sp"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"
+                    />
+
+
+
+                <ImageView
+                    android:id="@+id/image_view7"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/image_view6"
+                    android:src="@mipmap/img07" />
+                <CheckBox
+                    android:id="@+id/rb_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="自豪"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_below="@id/image_view6"
+                    android:layout_toRightOf="@+id/rb_6"
+                    android:textSize="16sp"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"
+                    />
+
+
+
+                <ImageView
+                    android:id="@+id/image_view8"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/image_view7"
+                    android:src="@mipmap/img08" />
+                <CheckBox
+                    android:id="@+id/rb_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="自信"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_below="@id/image_view7"
+                    android:layout_toRightOf="@+id/rb_7"
+                    android:textSize="16sp"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"
+                    />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="26dp"
+            android:layout_marginTop="5dp"
+            android:text="波动情绪"
+            android:textColor="#903b1c"
+            android:textSize="15sp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/image_view9"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentLeft="true"
+                    android:src="@mipmap/img09" />
+
+                <CheckBox
+                    android:id="@+id/rb_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="暴躁"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:textSize="16sp"
+                    android:layout_below="@id/image_view9"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"/>
+
+
+                <ImageView
+                    android:id="@+id/image_view10"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/image_view9"
+                    android:src="@mipmap/img10" />
+                <CheckBox
+                    android:id="@+id/rb_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="被拒"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_below="@id/image_view9"
+                    android:layout_toRightOf="@+id/rb_9"
+                    android:textSize="16sp"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"
+                    />
+
+
+
+                <ImageView
+                    android:id="@+id/image_view11"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/image_view10"
+                    android:src="@mipmap/img11" />
+                <CheckBox
+                    android:id="@+id/rb_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="茫然"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_below="@id/image_view10"
+                    android:layout_toRightOf="@+id/rb_10"
+                    android:textSize="16sp"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"
+                    />
+
+
+
+                <ImageView
+                    android:id="@+id/image_view12"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/image_view11"
+                    android:src="@mipmap/img12" />
+                <CheckBox
+                    android:id="@+id/rb_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="吃惊"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_below="@id/image_view11"
+                    android:layout_toRightOf="@+id/rb_11"
+                    android:textSize="16sp"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"
+                    />
+
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/image_view13"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentLeft="true"
+                    android:src="@mipmap/img13" />
+
+                <CheckBox
+                    android:id="@+id/rb_13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="迟疑"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:textSize="16sp"
+                    android:layout_below="@id/image_view13"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"/>
+
+                <ImageView
+                    android:id="@+id/image_view14"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/image_view13"
+                    android:src="@mipmap/img14" />
+                <CheckBox
+                    android:id="@+id/rb_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="愤怒"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_below="@id/image_view13"
+                    android:layout_toRightOf="@+id/rb_13"
+                    android:textSize="16sp"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"
+                    />
+
+
+
+                <ImageView
+                    android:id="@+id/image_view15"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/image_view14"
+                    android:src="@mipmap/img15" />
+                <CheckBox
+                    android:id="@+id/rb_15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="害怕"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_below="@id/image_view14"
+                    android:layout_toRightOf="@+id/rb_14"
+                    android:textSize="16sp"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"
+                    />
+
+
+
+                <ImageView
+                    android:id="@+id/image_view16"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/image_view15"
+                    android:src="@mipmap/img16" />
+                <CheckBox
+                    android:id="@+id/rb_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="怀疑"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_below="@id/image_view15"
+                    android:layout_toRightOf="@+id/rb_15"
+                    android:textSize="16sp"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"
+                    />
+
+
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/image_view17"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentLeft="true"
+                    android:src="@mipmap/img17" />
+
+                <CheckBox
+                    android:id="@+id/rb_17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="紧张"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:textSize="16sp"
+                    android:layout_below="@id/image_view17"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"/>
+
+                <ImageView
+                    android:id="@+id/image_view18"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/image_view17"
+                    android:src="@mipmap/img18" />
+                <CheckBox
+                    android:id="@+id/rb_18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="生气"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_below="@id/image_view17"
+                    android:layout_toRightOf="@+id/rb_17"
+                    android:textSize="16sp"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"
+                    />
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="26dp"
+            android:layout_marginTop="5dp"
+            android:text="消极情绪"
+            android:textColor="#903b1c"
+            android:textSize="15sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/image_view19"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentLeft="true"
+                    android:src="@mipmap/img19" />
+
+                <CheckBox
+                    android:id="@+id/rb_19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="担忧"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:textSize="16sp"
+                    android:layout_below="@id/image_view19"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"/>
+
+
+                <ImageView
+                    android:id="@+id/image_view20"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/image_view19"
+                    android:src="@mipmap/img20" />
+                <CheckBox
+                    android:id="@+id/rb_20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="孤独"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_below="@id/image_view19"
+                    android:layout_toRightOf="@+id/rb_19"
+                    android:textSize="16sp"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"
+                    />
+
+
+
+                <ImageView
+                    android:id="@+id/image_view21"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/image_view20"
+                    android:src="@mipmap/img21" />
+                <CheckBox
+                    android:id="@+id/rb_21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="嫉妒"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_below="@id/image_view20"
+                    android:layout_toRightOf="@+id/rb_20"
+                    android:textSize="16sp"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"
+                    />
+
+
+
+                <ImageView
+                    android:id="@+id/image_view22"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/image_view21"
+                    android:src="@mipmap/img22" />
+                <CheckBox
+                    android:id="@+id/rb_22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="沮丧"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_below="@id/image_view21"
+                    android:layout_toRightOf="@+id/rb_21"
+                    android:textSize="16sp"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"
+                    />
+
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/image_view23"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentLeft="true"
+                    android:src="@mipmap/img23" />
+
+                <CheckBox
+                    android:id="@+id/rb_23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="难过"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:textSize="16sp"
+                    android:layout_below="@id/image_view23"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"/>
+                <ImageView
+                    android:id="@+id/image_view24"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/image_view23"
+                    android:src="@mipmap/img24" />
+                <CheckBox
+                    android:id="@+id/rb_24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="内疚"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_below="@id/image_view23"
+                    android:layout_toRightOf="@+id/rb_23"
+                    android:textSize="16sp"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"
+                    />
+
+
+
+                <ImageView
+                    android:id="@+id/image_view25"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/image_view24"
+                    android:src="@mipmap/img25" />
+                <CheckBox
+                    android:id="@+id/rb_25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="疲惫"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_below="@id/image_view24"
+                    android:layout_toRightOf="@+id/rb_24"
+                    android:textSize="16sp"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"
+                    />
+
+
+
+                <ImageView
+                    android:id="@+id/image_view26"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/image_view25"
+                    android:src="@mipmap/img26" />
+                <CheckBox
+                    android:id="@+id/rb_26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="失望"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_below="@id/image_view25"
+                    android:layout_toRightOf="@+id/rb_25"
+                    android:textSize="16sp"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"
+                    />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/image_view27"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentLeft="true"
+                    android:src="@mipmap/img27" />
+
+                <CheckBox
+                    android:id="@+id/rb_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="委屈"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:textSize="16sp"
+                    android:layout_below="@id/image_view27"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"/>
+
+                <ImageView
+                    android:id="@+id/image_view28"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/image_view27"
+                    android:src="@mipmap/img28" />
+                <CheckBox
+                    android:id="@+id/rb_28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="无聊"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_below="@id/image_view27"
+                    android:layout_toRightOf="@+id/rb_27"
+                    android:textSize="16sp"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"
+                    />
+
+
+
+                <ImageView
+                    android:id="@+id/image_view29"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/image_view28"
+                    android:src="@mipmap/img29" />
+                <CheckBox
+                    android:id="@+id/rb_29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="无助"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_below="@id/image_view28"
+                    android:layout_toRightOf="@+id/rb_28"
+                    android:textSize="16sp"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"
+                    />
+
+
+
+                <ImageView
+                    android:id="@+id/image_view30"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/image_view29"
+                    android:src="@mipmap/img30" />
+                <CheckBox
+                    android:id="@+id/rb_30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="心烦"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_below="@id/image_view29"
+                    android:layout_toRightOf="@+id/rb_29"
+                    android:textSize="16sp"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"
+                    />
+
+
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/image_view31"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentLeft="true"
+                    android:src="@mipmap/img31" />
+
+                <CheckBox
+                    android:id="@+id/rb_31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="羞愧"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:textSize="16sp"
+                    android:layout_below="@id/image_view31"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"/>
+
+                <ImageView
+                    android:id="@+id/image_view32"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/image_view31"
+                    android:src="@mipmap/img32" />
+                <CheckBox
+                    android:id="@+id/rb_32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="厌恶"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_below="@id/image_view31"
+                    android:layout_toRightOf="@+id/rb_31"
+                    android:textSize="16sp"
+                    android:background="@drawable/cb_background"
+                    android:textColor="@drawable/radio_color"
+                    />
+
+
+
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

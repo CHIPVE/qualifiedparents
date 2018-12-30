@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="#BBBBBB"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#AAAAAA">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="4"
+                android:orientation="vertical"
+                android:background="#FFFFFF">
+                <android.support.v4.widget.NestedScrollView
+                    android:id="@+id/scrollable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/time_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible"
+                            android:text=""
+                            android:textColor="#000000"
+                            android:textSize="20sp"/>
+                        <TextView
+                            android:id="@+id/event_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="1000dp"
+                            android:visibility="visible"
+                            android:text=""
+                            android:textColor="#000000"
+                            android:textSize="20sp"/>
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+            </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="0px"
+        android:layout_weight="6"
+        android:layout_gravity="bottom">
+        <include layout="@layout/questionbar"/>
+            <android.support.v4.view.ViewPager
+                android:id="@+id/doublepage_viewpager"
+                android:background="#FFFFFF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+    </LinearLayout>
+    </LinearLayout>
+
+
+</FrameLayout>

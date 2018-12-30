@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">QualifiedParents</string>
     <string name="title_home">作业簿</string>
     <string name="title_dashboard">光荣榜</string>
     <string name="title_notifications">我的</string>
+    <string name="app_name">不挂科爸妈</string>
 </resources>
+
