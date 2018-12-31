@@ -115,11 +115,11 @@ public class  TimeLineFragment extends Fragment {
 
         listItem.add(map1);
 
-        map2.put("ItemTitle", "新手引导2");
+        map2.put("ItemTitle", "记录孩子与您的相处问题是每一个新手家长与孩子好好相处、共同进步的第一步。记录问题能帮您理清思路、运用理论与孩子共同解决问题，获得共同成长。");
 
         listItem.add(map2);
 
-        map3.put("ItemTitle", "新手引导1");
+        map3.put("ItemTitle", "快开启问题记录，留下您与孩子共同成长的印记吧。");
 
         listItem.add(map3);
 

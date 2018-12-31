@@ -209,7 +209,10 @@ public class TimeLineItemDecoration extends RecyclerView.ItemDecoration {
             else if(i>=childCount - 3){
                c.drawCircle(centerx, centery, circle_radius, mPaint3);
                c.drawRoundRect(centerx + 36, centery - 36, centerx + 216, centery + 36, 15, 15, mPaintTag2);
-               c.drawText("样例", centerx + 70, centery + 13, mPaintSolve);
+               if(i == childCount - 3)
+                   c.drawText("案例模板", centerx + 50, centery + 13, mPaintSolve);
+               else
+                   c.drawText("新手指南", centerx + 50, centery + 13, mPaintSolve);
 
                 int index = parent.getChildAdapterPosition(child);
 
@@ -234,8 +237,8 @@ public class TimeLineItemDecoration extends RecyclerView.ItemDecoration {
                 float Text_x = centerx - 180;
                 float Text_y = centery + 10;
 
-                c.drawText("Nov.2018", Text_x, Text_y, mPaint1);
-                c.drawText("27", Text_x + 30, Text_y + 120, mPaint2);
+                c.drawText("Dec.2018", Text_x, Text_y, mPaint1);
+                c.drawText("1", Text_x + 30, Text_y + 120, mPaint2);
             }
         }
     }
